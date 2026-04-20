@@ -33,11 +33,6 @@
         color: #333;
         font-weight: 500;
       }
-      .controls {
-        display: flex;
-        gap: 18px;
-        margin-bottom: 18px;
-      }
       .btnToggle {
         width: 100%;
         border: none;
@@ -74,6 +69,27 @@
         margin-bottom: 10px;
         outline: none;
       }
+      .back-forwardBtn {
+        background-color: #34495e;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+
+      .back-forwardBtn:hover {
+        background-color: #2c3e50;
+      }
+      .controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+      }
     </style>
 
     <div id="audioPlayer">
@@ -83,7 +99,9 @@
         <span id="timeDisplay">0:00</span>
       </div>
       <div class="controls">
+        <button id="backBtn" class="back-forwardBtn"><< 10s</button>
         <button id="playPause" class="btnToggle">Play</button>
+        <button id="forwardBtn" class="back-forwardBtn">10s >></button>
       </div>
       <div class="volume">
         <label for="volumeSlider">Volume</label>

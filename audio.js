@@ -30,3 +30,13 @@ window.addEventListener("keydown", (event) => {
     togglePlay();
   }
 });
+
+const backBtn = document.getElementById("backBtn");
+const forwardBtn = document.getElementById("forwardBtn");
+backBtn.onclick = () => {
+  audio.currentTime = audio.currentTime - 10;
+};
+
+forwardBtn.onclick = () => {
+  audio.currentTime = audio.currentTime + 10;
+};
