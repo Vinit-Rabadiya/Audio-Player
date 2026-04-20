@@ -20,6 +20,7 @@ audio.ontimeupdate = () => {
 
 window.addEventListener("keydown", (event) => {
   if (event.code === "Space") {
+    event.preventDefault(); //to stop the page from scrolling when space is pressed
     if (audio.paused) {
       audio.play();
     } else {
