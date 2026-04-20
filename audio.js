@@ -1,13 +1,19 @@
 const audio = document.getElementById("audio");
-const playButton = document.getElementById("play");
-playButton.addEventListener("click", () => {
-  audio.play();
-});
+const playPauseButton = document.getElementById("playPause");
 
-const pauseButton = document.getElementById("pause");
-pauseButton.addEventListener("click", () => {
-  audio.pause();
-});
+function togglePlay() {
+  if (audio.paused) {
+    audio.play();
+    playPauseButton.textContent = "Pause";
+    playPauseButton.style.backgroundColor = "#e74c3c";
+  } else {
+    audio.pause();
+    playPauseButton.textContent = "Play";
+    playPauseButton.style.backgroundColor = "#27ae60";
+  }
+}
+playPauseButton.onclick = togglePlay;
+
 const volumeSlider = document.getElementById("volumeSlider");
 volumeSlider.addEventListener("input", (event) => {
   audio.volume = event.target.value;
@@ -21,10 +27,6 @@ audio.ontimeupdate = () => {
 window.addEventListener("keydown", (event) => {
   if (event.code === "Space") {
     event.preventDefault(); //to stop the page from scrolling when space is pressed
-    if (audio.paused) {
-      audio.play();
-    } else {
-      audio.pause();
-    }
+    togglePlay();
   }
 });

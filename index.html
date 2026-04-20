@@ -38,18 +38,21 @@
         gap: 18px;
         margin-bottom: 18px;
       }
-      .controls button {
-        background: #4f8cff;
-        color: #fff;
+      .btnToggle {
+        width: 100%;
         border: none;
-        border-radius: 6px;
-        padding: 8px 22px;
-        font-size: 1em;
+        padding: 15px;
+        border-radius: 8px;
+        font-weight: bold;
+        color: white;
         cursor: pointer;
-        transition: background 0.2s;
+        background-color: #27ae60;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
       }
-      .controls button:hover {
-        background: #2563eb;
+      .btnToggle:hover {
+        filter: brightness(1.1);
+        transform: translateY(-2px);
       }
       .volume {
         display: flex;
@@ -80,8 +83,7 @@
         <span id="timeDisplay">0:00</span>
       </div>
       <div class="controls">
-        <button id="play">Play</button>
-        <button id="pause">Pause</button>
+        <button id="playPause" class="btnToggle">Play</button>
       </div>
       <div class="volume">
         <label for="volumeSlider">Volume</label>
