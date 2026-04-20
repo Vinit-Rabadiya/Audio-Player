@@ -17,3 +17,13 @@ const timeDisplay = document.getElementById("timeDisplay");
 audio.ontimeupdate = () => {
   timeDisplay.textContent = audio.currentTime.toFixed(1);
 };
+
+window.addEventListener("keydown", (event) => {
+  if (event.code === "Space") {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }
+});
